@@ -10,7 +10,7 @@
      <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
         <a class="nav-link" href="<?php echo site_url('admin/form/add') ?>">
             <i class="fas fa-fw fa-users"></i>
-            <span>Registrasi</span>
+            <span>Registrasi Pegawai</span>
         </a>
     </li>
 
@@ -18,6 +18,13 @@
         <a class="nav-link" href="<?php echo site_url('admin/form/') ?>">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Pegawai</span>
+        </a>
+    </li>
+
+    <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+        <a class="nav-link" href="<?php echo site_url('admin/absen/') ?>">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Absen Pegawai</span>
         </a>
     </li>
 

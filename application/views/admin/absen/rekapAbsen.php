@@ -20,6 +20,9 @@
 
 				<!-- DataTables -->
 				<div class="card mb-3">
+					<div class="card-header">
+						<a href="<?php echo site_url('admin/form/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+					</div>
 					<div class="card-body">
 
 						<div class="table-responsive">
@@ -27,37 +30,25 @@
 								<thead>
 									<tr>
 										<th>Nama</th>
-										<th>Rekanan</th>
-										<th>Nomor Telepon</th>
-										<th>Tanggal Mobilisasi</th>
-										<th>Tanggal Demobilisasi</th>
-										<th>Photo</th>
+										<th>Tanggal</th>
+										<th>Keterangan</th>
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($users as $user): ?>
+									<?php ($users as $user): ?>
 									<tr>
 										<td width="150">
 											<?php echo $user->nama ?>
 										</td>
 										<td>
-											<?php echo $user->satker ?>
+											<?php echo $user->tanggal ?>
 										</td>
 										<td>
-											<?php echo $user->noTelp ?>
-										</td>
-										<td>
-											<?php echo $user->tglMobilisasi ?>
-										</td>
-										<td>
-											<?php echo $user->tglDemobilisasi ?>
-										</td>
-										<td width="250">
-											<a href="rekapAbsen">Lihat Rekap Absen</a>
+											<?php echo $user->keterangan ?>
 										</td>
 									</tr>
-									<?php endforeach; ?>
+									<?php; ?>
 
 								</tbody>
 							</table>

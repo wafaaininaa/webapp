@@ -1,99 +1,62 @@
-<!DOCTYPE html >
+<?php
+  include "dbconfig.php";
+?>
+ 
+<!DOCTYPE html>
+<html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Using MySQL and PHP with Google Maps</title>
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      #map-canvas {
+        width: 1350px;
+        height: 640px;
       }
     </style>
-  </head>
-
-<html>
-  <body>
-    <div id="map"></div>
-
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-      var customLabel = {
-        restaurant: {
-          label: 'R'
-        },
-        bar: {
-          label: 'B'
-        }
-      };
-
-        function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-33.863276, 151.207977),
-          zoom: 12
-        });
-        var infoWindow = new google.maps.InfoWindow;
-
-          // Change this depending on the name of your PHP or XML file
-          downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
-            var xml = data.responseXML;
-            var markers = xml.documentElement.getElementsByTagName('marker');
-            Array.prototype.forEach.call(markers, function(markerElem) {
-              var id = markerElem.getAttribute('user_id');
-              var point = new google.maps.LatLng(
-                  parseFloat(markerElem.getAttribute('latitude')),
-                  parseFloat(markerElem.getAttribute('longitude')));
-
-              var infowincontent = document.createElement('div');
-              var strong = document.createElement('strong');
-              strong.textContent = name
-              infowincontent.appendChild(strong);
-              infowincontent.appendChild(document.createElement('br'));
-
-              var text = document.createElement('text');
-              text.textContent = address
-              infowincontent.appendChild(text);
-              var icon = customLabel[type] || {};
-              var marker = new google.maps.Marker({
-                map: map,
-                position: point,
-                label: icon.label
-              });
-              marker.addListener('click', function() {
-                infoWindow.setContent(infowincontent);
-                infoWindow.open(map, marker);
-              });
-            });
+    var marker;
+      function initialize() {
+        var mapOptions = {
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }     
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var infoWindow = new google.maps.InfoWindow;      
+        var bounds = new google.maps.LatLngBounds();
+ 
+ 
+        function bindInfoWindow(marker, map, infoWindow, html) {
+          google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.setContent(html);
+            infoWindow.open(map, marker);
           });
         }
-
-
-
-      function downloadUrl(url, callback) {
-        var request = window.ActiveXObject ?
-            new ActiveXObject('Microsoft.XMLHTTP') :
-            new XMLHttpRequest;
-
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request, request.status);
+ 
+          function addMarker(lat, lng, info) {
+            var pt = new google.maps.LatLng(lat, lng);
+            bounds.extend(pt);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: pt
+            });       
+            map.fitBounds(bounds);
+            bindInfoWindow(marker, map, infoWindow, info);
           }
-        };
-
-        request.open('GET', url, true);
-        request.send(null);
-      }
-
-      function doNothing() {}
+ 
+          <?php
+            $query = mysqli_query($con,"select * from apps");
+            while ($data = mysqli_fetch_array($query))
+            {
+                $nama = $data['nama'];
+                $lat = $data['latitude'];
+                $lon = $data['longitude'];
+                
+                echo ("addMarker($lat, $lon, '<b>$nama</b>');\n");                        
+            }
+          ?>
+        }
+      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map-canvas"></div>
   </body>
 </html>

@@ -16,4 +16,10 @@ class Absen extends CI_Controller {
         $this->load->view("admin/absen/list", $data);
     }
 
+    public function rekapAbsen()
+    {
+        $data["users"] = $this->user_model->getAll();
+        $this->load->view("admin/absen/rekapAbsen", $data);
+    }
+
 }

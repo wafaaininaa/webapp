@@ -35,14 +35,10 @@
         </li> -->
 
 
-        <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <i class="fas fa-user-circle fa-fw"></i> Admin
+        <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
+            <a class="nav-link" href="<?php echo base_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
+                <i class="fas fa-user-circle fa-fw"></i> Logout
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?php echo base_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">Logout</a>
-            </div>
         </li>
     </ul>
 

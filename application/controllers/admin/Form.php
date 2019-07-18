@@ -58,4 +58,9 @@ class Form extends CI_Controller
             redirect(site_url('admin/form'));
         }
     }
+
+    	function logout(){
+		$this->session->sess_destroy();
+		redirect(site_url('login'));
+	}
 }

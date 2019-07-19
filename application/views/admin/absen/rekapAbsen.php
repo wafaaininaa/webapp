@@ -20,42 +20,40 @@
 
 				<!-- DataTables -->
 				<div class="card mb-3">
-					<div class="card-header">
-						<a href="<?php echo site_url('admin/form/add') ?>"><i class="fas fa-plus"></i> Add New</a>
-					</div>
 					<div class="card-body">
 
 						<div class="table-responsive">
 							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Nama</th>
+										<th>Hari</th>
 										<th>Tanggal</th>
 										<th>Keterangan</th>
-										<th></th>
+										<th>Alasan Absen</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php ($users as $user): ?>
-									<tr>
+										<tr>
+										<!-- <?php foreach ($data as $data): ?> -->
 										<td width="150">
-											<?php echo $user->nama ?>
+											<?php echo $data->hari?>
 										</td>
 										<td>
-											<?php echo $user->tanggal ?>
+											<?php echo $data->tanggal?>
 										</td>
 										<td>
-											<?php echo $user->keterangan ?>
+											<?php echo $data->keterangan?>
 										</td>
-									</tr>
-									<?php; ?>
-
+										<td>
+											<?php echo $data->alasan_absen?>
+										</td>
+									<!-- <?php endforeach; ?> -->
+										</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<!-- /.container-fluid -->
 

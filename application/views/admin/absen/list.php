@@ -54,7 +54,7 @@
 											<?php echo $user->tglDemobilisasi ?>
 										</td>
 										<td width="250">
-											<a href="rekapAbsen">Lihat Rekap Absen</a>
+											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Absen</a>
 										</td>
 									</tr>
 									<?php endforeach; ?>

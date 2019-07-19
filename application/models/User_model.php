@@ -195,5 +195,4 @@ private function _deleteImage($id)
         return array_map('unlink', glob(FCPATH."upload/form/$filename.*"));
     }
 }
-
 }

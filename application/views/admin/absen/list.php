@@ -31,7 +31,7 @@
 										<th>Nomor Telepon</th>
 										<th>Tanggal Mobilisasi</th>
 										<th>Tanggal Demobilisasi</th>
-										<th>Photo</th>
+										<th></th>
 										<th></th>
 									</tr>
 								</thead>
@@ -55,6 +55,9 @@
 										</td>
 										<td width="250">
 											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Absen</a>
+										</td>
+										<td width="250">
+											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Hadir</a>
 										</td>
 									</tr>
 									<?php endforeach; ?>

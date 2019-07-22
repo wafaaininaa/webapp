@@ -42,10 +42,10 @@
           }
  
           <?php
-            $query = mysqli_query($con,"select * from apps");
+            $query = mysqli_query($con,"select * from presensihadir");
             while ($data = mysqli_fetch_array($query))
             {
-                $nama = $data['user_id'];
+                $nama = $data['nama'];
                 $lat = $data['latitude'];
                 $lon = $data['longitude'];
                 

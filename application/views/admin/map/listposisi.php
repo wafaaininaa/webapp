@@ -50,9 +50,9 @@
 											<?php echo $user->tglMobilisasi ?>
 										</td>
 										<td width="250">
-											<a href="<?php echo site_url('admin/map/gmap') ?>"> Realtime</a>
+											<a href="<?php echo site_url('admin/map/gmap/'.$user->user_id) ?>"> Realtime</a>
 											<br>
-											<a href="<?php echo site_url('admin/map/gmap') ?>"> Track</a>
+											<a href="<?php echo site_url('admin/map/gmap/'.$user->user_id) ?>"> Track</a>
 										</td>
 									</tr>
 									<?php endforeach; ?>

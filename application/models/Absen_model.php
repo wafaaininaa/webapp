@@ -13,7 +13,7 @@ class Absen_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('presensiabsen');
-        $this->db->join('presensihadir', 'presensiabsen.user_id=presensihadir.user_id', 'left');
+        $this->db->join('presensihadir', 'presensihadir.user_id=presensiabsen.user_id', 'left');
         $this->db->where('presensiabsen.user_id', $user_id);
         $query = $this->db->get();
         return $query->result();

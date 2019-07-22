@@ -45,7 +45,7 @@
             $query = mysqli_query($con,"select * from apps");
             while ($data = mysqli_fetch_array($query))
             {
-                $nama = $data['nama'];
+                $nama = $data['user_id'];
                 $lat = $data['latitude'];
                 $lon = $data['longitude'];
                 

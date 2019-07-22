@@ -33,22 +33,22 @@
 									</tr>
 								</thead>
 								<tbody>
+									<?php foreach ($data as $dt): ?>
 										<tr>
-										<!-- <?php foreach ($data as $data): ?> -->
 										<td width="150">
-											<?php echo $data->hari?>
+											<?php echo $dt->hari ?>
 										</td>
 										<td>
-											<?php echo $data->tanggal?>
+											<?php echo $dt->tanggal ?>
 										</td>
 										<td>
-											<?php echo $data->keterangan?>
+											<?php echo $dt->keterangan ?>
 										</td>
 										<td>
-											<?php echo $data->alasan_absen?>
+											<?php echo $dt->alasan_absen ?>
 										</td>
-									<!-- <?php endforeach; ?> -->
 										</tr>
+										<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>

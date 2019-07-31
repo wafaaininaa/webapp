@@ -12,10 +12,19 @@ class Absen_model extends CI_Model
     function rekapAbsen($user_id)
     {
         $this->db->select('*');
+        $this->db->from('presensiabsen');
+        // $this->db->join('presensiabsen', 'presensihadir.id=presensiabsen.id');
+        // $this->db->join('apps', 'apps.user_id=presensiabsen.user_id');
+        $this->db->where('presensiabsen.user_id ', $user_id);
+        $query = $this->db->get();
+        return $query->result();
+    }    
+    function rekapHadir($user_id){
+        $this->db->select('*');
         $this->db->from('presensihadir');
-        $this->db->join('presensiabsen', 'presensihadir.id=presensiabsen.id');
-        $this->db->join('apps', 'apps.user_id=presensiabsen.user_id');
-        $this->db->where('apps.user_id ', $user_id);
+        //$this->db->join('presensiabsen', 'presensihadir.id=presensiabsen.id');
+        //$this->db->join('apps', 'apps.user_id=presensiabsen.user_id');
+        $this->db->where('presensihadir.user_id ', $user_id);
         $query = $this->db->get();
         return $query->result();
     }

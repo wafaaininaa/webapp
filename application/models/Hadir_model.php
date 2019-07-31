@@ -2,7 +2,7 @@
 
 class Hadir_model extends CI_Model
 {
-    private $_table = "presensihadir";
+    private $_table = "location";
 
     public function getAll()
     {
@@ -13,8 +13,6 @@ class Hadir_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('presensihadir');
-        // $this->db->join('presensiabsen', 'presensihadir.id=presensiabsen.id');
-        // $this->db->join('apps', 'apps.user_id=presensiabsen.user_id');
         $this->db->where('presensihadir.user_id ', $user_id);
         $query = $this->db->get();
         return $query->result();

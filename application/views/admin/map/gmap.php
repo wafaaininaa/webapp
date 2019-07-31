@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <title>MAPS</title>
     <style>
       #map-canvas {
         width: 1350px;
@@ -41,11 +42,11 @@
             bindInfoWindow(marker, map, infoWindow, info);
           }
  
-          <?php
-            $query = mysqli_query($con,"select * from presensihadir");
+          <?php 
+            $query = mysqli_query($con,"select ST_X(lokasi) as latitude, ST_Y(lokasi) as longitude, user_id as u from location order by tanggal desc limit 1 ");
             while ($data = mysqli_fetch_array($query))
             {
-                $nama = $data['nama'];
+                $nama = $data['u'];
                 $lat = $data['latitude'];
                 $lon = $data['longitude'];
                 

@@ -1,4 +1,4 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Map extends CI_Controller {
@@ -6,18 +6,18 @@ class Map extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model("user_model");
-        $this->load->model("hadir_model");
+        $this->load->model("User_model");
+        $this->load->model("Map_model");
         $this->load->library('form_validation');
-        $this->load->model('m_login');
+        $this->load->model('M_login');
     }
 
     public function index()
     {
-        $data["users"] = $this->user_model->getAll();
+        $data["users"] = $this->User_model->getAll();
        // $this->load->view("admin/map/listposisi", $data);
         
-       if($this->m_login->logged_id())
+       if($this->M_login->logged_id())
         {
 
             $this->load->view("admin/map/listposisi", $data);
@@ -29,9 +29,8 @@ class Map extends CI_Controller {
         }
     }
 
-    public function gmap()
+    public function gmap($user_id)
     {
-        $data["users"] = $this->hadir_model->getAll();
-        $this->load->view("admin/map/gmap", $data);
+        $this->load->view("admin/map/gmap", $user_id);
     }
 }

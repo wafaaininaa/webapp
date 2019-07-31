@@ -78,7 +78,7 @@
 </head>
 <body>
 	
-<form action="<?php echo site_url('login/aksi_login'); ?>" method="post">		
+<form action="<?php echo site_url('Login/aksi_login'); ?>" method="post">		
 
 	<div class="container-login100" style="background-image: url('../images/bg.jpg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">

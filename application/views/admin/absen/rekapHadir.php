@@ -26,48 +26,30 @@
 							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Nama</th>
-										<th>Rekanan</th>
-										<th>Nomor Telepon</th>
-										<th>Tanggal Mobilisasi</th>
-										<th>Tanggal Demobilisasi</th>
-										<th></th>
-										<th></th>
+										<th>Hari</th>
+										<th>Tanggal</th>
+										<th>Keterangan</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($users as $user): ?>
-									<tr>
+									<?php foreach ($data as $dt): ?>
+										<tr>
 										<td width="150">
-											<?php echo $user->nama ?>
+											<?php echo $dt->hari ?>
 										</td>
 										<td>
-											<?php echo $user->satker ?>
+											<?php echo $dt->tanggal ?>
 										</td>
 										<td>
-											<?php echo $user->noTelp ?>
+											<?php echo $dt->keterangan ?>
 										</td>
-										<td>
-											<?php echo $user->tglMobilisasi ?>
-										</td>
-										<td>
-											<?php echo $user->tglDemobilisasi ?>
-										</td>
-										<td width="250">
-											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Ketidakhadiran</a>
-											</td>
-										<td>
-											<a href="<?php echo site_url('admin/Absen/rekapHadir/'.$user->user_id) ?>">Lihat Rekap Kehadiran</a>
-										</td>
-									</tr>
-									<?php endforeach; ?>
-
+										</tr>
+										<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</div>
-
 			</div>
 			<!-- /.container-fluid -->
 

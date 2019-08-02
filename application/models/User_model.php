@@ -93,6 +93,10 @@ class User_model extends CI_Model
 
             ['field' => 'longitude',
             'label' => 'Longitude',
+            'rules' => 'required'],
+
+            ['field' => 'image',
+            'label' => 'Image',
             'rules' => 'required']
         ];
     }

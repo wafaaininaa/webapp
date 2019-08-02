@@ -6,18 +6,18 @@ class Map extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model("User_model");
-        $this->load->model("Map_model");
+        $this->load->model("user_model");
+        $this->load->model("map_model");
         $this->load->library('form_validation');
-        $this->load->model('M_login');
+        $this->load->model('m_login');
     }
 
     public function index()
     {
-        $data["users"] = $this->User_model->getAll();
+        $data["users"] = $this->user_model->getAll();
        // $this->load->view("admin/map/listposisi", $data);
         
-       if($this->M_login->logged_id())
+       if($this->m_login->logged_id())
         {
 
             $this->load->view("admin/map/listposisi", $data);
@@ -31,6 +31,7 @@ class Map extends CI_Controller {
 
     public function gmap($user_id)
     {
+        //$data["data"] = $this->map_model->lokasi($user_id);
         $this->load->view("admin/map/gmap", $user_id);
     }
 }

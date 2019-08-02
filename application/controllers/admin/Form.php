@@ -7,16 +7,16 @@ class Form extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model("User_model");
+        $this->load->model("user_model");
         $this->load->library('form_validation');
-        $this->load->model("M_login");
+        $this->load->model("m_login");
     }
 
     public function index()
     {
-        $data["users"] = $this->User_model->getAll();
+        $data["users"] = $this->user_model->getAll();
         
-        if($this->M_login->logged_id()){
+        if($this->m_login->logged_id()){
             $this->load->view("admin/form/list", $data);
         }else{
             //jika session belum terdaftar, maka redirect ke halaman login
@@ -27,7 +27,7 @@ class Form extends CI_Controller
 
     public function add()
     {
-        $user = $this->User_model;
+        $user = $this->user_model;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
@@ -43,7 +43,7 @@ class Form extends CI_Controller
     {
         if (!isset($id)) redirect('admin/form');
        
-        $user = $this->User_model;
+        $user = $this->user_model;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 

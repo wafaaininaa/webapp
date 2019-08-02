@@ -9,7 +9,7 @@ class Map_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    function getLocation($user_id)
+    function lokasi($user_id)
     {
         $this->db->select("*");
         $this->db->from('location');

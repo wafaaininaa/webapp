@@ -37,7 +37,7 @@
 
         <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active': '' ?>">
             <a class="nav-link" href="<?php echo base_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-user-circle fa-fw"></i> Logout
+                <b> Logout</b>
             </a>
         </li>
     </ul>

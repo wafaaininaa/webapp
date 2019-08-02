@@ -53,12 +53,13 @@
 										<td>
 											<?php echo $user->tglDemobilisasi ?>
 										</td>
-										<td width="250">
-											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Ketidakhadiran</a>
-											</td>
 										<td>
 											<a href="<?php echo site_url('admin/Absen/rekapHadir/'.$user->user_id) ?>">Lihat Rekap Kehadiran</a>
 										</td>
+										<td>
+											<a href="<?php echo site_url('admin/Absen/rekapAbsen/'.$user->user_id) ?>">Lihat Rekap Ketidakhadiran</a>
+											</td>
+										
 									</tr>
 									<?php endforeach; ?>
 

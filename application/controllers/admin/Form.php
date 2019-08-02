@@ -62,7 +62,7 @@ class Form extends CI_Controller
     {
         if (!isset($id)) show_404();
         
-        if ($this->User_model->delete($id)) {
+        if ($this->user_model->delete($id)) {
             redirect(site_url('admin/form'));
         }
     }

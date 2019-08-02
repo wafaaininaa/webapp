@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 02, 2019 at 04:04 AM
+-- Generation Time: Aug 02, 2019 at 08:55 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.2
 
@@ -84,42 +84,6 @@ INSERT INTO `apps` (`user_id`, `satker`, `kepalaSatker`, `nip`, `tahunAnggaran`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kegiatanusers`
---
-
-CREATE TABLE `kegiatanusers` (
-  `id` int(11) NOT NULL,
-  `user_id` varchar(99) NOT NULL,
-  `url` varchar(225) NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
-  `hari` varchar(10) NOT NULL,
-  `tanggal` varchar(50) NOT NULL,
-  `jam` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kegiatanusers`
---
-
-INSERT INTO `kegiatanusers` (`id`, `user_id`, `url`, `keterangan`, `hari`, `tanggal`, `jam`) VALUES
-(31, '5d24456ce6949', 'http://192.168.42.150/staff_Tracking/uploads/1.pdf', 'ggg', 'Senin', '15 Jul 201', '16:38'),
-(32, '454554', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'coba tes', 'jumat', '19 jul 201', '12:12'),
-(33, '5d2fdbb236490', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'coba tes lg', 'jumat', '19 jul 201', '12:11'),
-(34, '5d2fdbb236490', '', 'coba tes lg hayo', 'jumat', '19 jul 201', '15:11'),
-(35, '5d2fdbb236490', 'http://androidblog.esy.es/AndroidJSon/uploads_file', 'coba tes lg hayo', 'jumat', '19 jul 201', '15:11'),
-(36, '5d2fdbb236490', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'coba terus', 'senin', '22 Jul 201', '08:46'),
-(37, '5d2fdbb236490', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'coba terus lg', 'senin', '22 Jul 201', '08:46'),
-(38, '5d2fdbb236490', 'https://192.168.1.162uploads_file_user/38.pdf', 'coba terus lg lg', 'senin', '22 Jul 201', '08:46'),
-(39, '', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'keterangan', 'senin', '22 Jul 201', 'jam'),
-(40, '5d2fdbb236490', 'http://192.168.1.162/staff_Tracking/uploads_file_u', 'hari ini', 'senin', '22 Jul', '10:43'),
-(41, '5d2fdbb236490', 'http://trackingforadmin.000webhostapp.comuploads_file_user/41.pdf', 'laporan kuy', 'senin', '22 Jul 2019', '13:20'),
-(42, '5d2fdbb236490', 'http://trackingforadmin.000webhostapp.com/uploads_file_user/42.pdf', 'laporan lagi lagi', 'senin', '22 Jul 2019', '13:38'),
-(43, '5d2fdbb236490', 'http://trackingforadmin.000webhostapp.com/uploads_file_user/43.pdf', 'laporan lagi lagi lagi', 'senin', '22 Jul 2019', '15:36'),
-(44, '5d2fdbb236490', 'http://trackingforadmin.000webhostapp.com/uploads_file_user/44.pdf', 'tidak hadir', 'selasa', '23 Jul 2019', '09:35');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `location`
 --
 
@@ -145,7 +109,10 @@ INSERT INTO `location` (`user_id`, `lokasi`, `tanggal`, `jam`) VALUES
 ('5d2fdbb236490', '\0\0\0\0\0\0\0\0\0À†¶À\0\0LL¶Z@', '2019-6-30', '10:40:14'),
 ('5d2d4f317b560', '\0\0\0\0\0\0\0\0\0:ÂÀ\0\0`HJ¶Z@', '2019-6-31', '16:43:56'),
 ('5d2d4f317b560', '\0\0\0\0\0\0\0\0\0 ½gÀ\0\045§¶Z@', '2019-6-31', '18:53:43'),
-('5d2d4f317b560', '\0\0\0\0\0\0\0\0\0 ½gÀ\0\045§¶Z@', '2019-8-1', '11:59:10');
+('5d2d4f317b560', '\0\0\0\0\0\0\0\0\0 ½gÀ\0\045§¶Z@', '2019-8-1', '11:59:10'),
+('5d2fdbb236490', '\0\0\0\0\0\0\0\0\0€q)À\0\0¤ÝR¶Z@', '2019-7-2', '15:40:30'),
+('5d2bda1b75bf0', '\0\0\0\0\0\0\0\0\0Às«À\0\0Î¶O¶Z@', '2019-7-2', '15:43:45'),
+('5d2d52a0b82d4', '\0\0\0\0\0\0\0\0\0ÀÆÁÀ\0\02ÀK¶Z@', '2019-7-2', '15:53:18');
 
 -- --------------------------------------------------------
 
@@ -168,14 +135,13 @@ CREATE TABLE `presensiabsen` (
 --
 
 INSERT INTO `presensiabsen` (`id`, `user_id`, `alasan_absen`, `hari`, `tanggal`, `jam`, `keterangan`) VALUES
-(1, '', '', '', '', '', ''),
-(2, '5d24456ce69', 'cape', 'Rabu', '17 Jul 2019', '16:23:52', ''),
-(3, '5d24456ce6949', 'cape bgt ah', 'Rabu', '17 Jul 2019', '16:45:8', ''),
-(4, '5d2fdbb236490', 'mls', 'Kamis', '18 Jul 2019', '9:52:49', ''),
 (5, '5d2fdbb236490', 'tidak hadir', 'senin', '22 Jul 2019', '09:30', 'tidak hadir'),
-(6, '5d2fdbb236490', 'sakit', 'senin', '22 Jul 2019', '09:35', 'tidak hadir'),
 (7, '5d2fdbb236490', 'Sakit', 'Selasa', '23 Jul 2019', '12:27:36', 'tidak hadir'),
-(8, '5d2fdbb236490', 'cuti', 'Jumat', '2019-7-26', '15:54:59', 'tidak hadir');
+(9, '5d2fdbb236490', 'sakit', 'Jumat', '2 Aug 2019', '13:59:19', 'tidak hadir'),
+(10, '5d2fdbb236490', 'sakit', 'Jumat', '2 Aug 2019', '13:59:19', 'tidak hadir'),
+(11, '5d2bda1b75bf0', 'Sakit', 'Jumat', '2 Aug 2019', '15:42:45', 'tidak hadir'),
+(12, '5d2d4f317b560', 'Acara keluarga', 'Jumat', '2 Aug 2019', '15:45:52', 'tidak hadir'),
+(13, '5d2d52a0b82d4', 'acara keluarga', 'Jumat', '2 Aug 2019', '15:50:37', 'tidak hadir');
 
 -- --------------------------------------------------------
 
@@ -201,16 +167,11 @@ CREATE TABLE `presensihadir` (
 --
 
 INSERT INTO `presensihadir` (`id`, `user_id`, `nama`, `img_url`, `hari`, `tanggal`, `jam`, `latitude`, `longitude`, `keterangan`) VALUES
-(1, '5d24456ce6949', '', 'http://192.168.42.150/staff_Tracking/images/0.jpg', 'Rabu', '17 Jul 201', '13:57', 0, 0, ''),
-(2, '5d24456ce6949', '', 'http://192.168.42.150/staff_Tracking/images/1.jpg', 'Rabu', '17 Jul 201', '14:13', 0, 0, ''),
-(3, '5d24456ce6949', '', 'http://192.168.42.150/staff_Tracking/images/2.jpg', 'Rabu', '17 Jul 201', '14:22', 0, 0, ''),
-(4, '5d24456ce6949', '', 'http://192.168.42.150/staff_Tracking/images/3.jpg', 'Rabu', '17 Jul 2019', '15:1:51', -6.2722265, 106.8486283, ''),
-(5, '5d2fdbb236490', '', 'http://192.168.42.150/staff_Tracking/images/4.jpg', 'Kamis', '18 Jul 2019', '9:52:49', -6.2722265, 106.8486283, ''),
-(6, '5d2fdbb236490', '', 'http://192.168.42.150/staff_Tracking/images_user/5.jpg', 'Jumat', '19 Jul 2019', '10:7:31', -6.2725946, 106.8471532, 'hadir'),
 (7, '5d2fdbb236490', 'Saya', 'http://192.168.42.150/staff_Tracking/images_user/6.jpg', 'Jumat', '19 Jul 2019', '14:15:40', -6.2725946, 106.8471532, 'hadir'),
-(8, '5d2fdbb236490', '', 'https://trackingforadmin.000webhostapp.com/images_user/7.jpg', 'Selasa', '23 Jul 2019', '10:47:29', -6.2720968, 106.8484317, 'hadir'),
 (9, '5d2fdbb236490', 'Saya', 'https://trackingforadmin.000webhostapp.com/images_user/8.jpg', 'Selasa', '23 Jul 2019', '12:27:36', -6.2720849, 106.8484519, 'hadir'),
-(10, '5d2fdbb236490', 'Saya', 'https://trackingforadmin.000webhostapp.com/images_user/9.jpg', 'Jumat', '2019-7-26', '15:54:59', -6.2720882, 106.848444, 'hadir');
+(11, '5d2bda1b75bf0', 'Budi', 'https://trackingforadmin.000webhostapp.com/images_user/10.jpg', 'Jumat', '2 Aug 2019', '15:42:45', -6.2720951, 106.848447, 'hadir'),
+(12, '5d2d4f317b560', 'Wafa', 'https://trackingforadmin.000webhostapp.com/images_user/11.jpg', 'Jumat', '2 Aug 2019', '15:45:52', -6.272118, 106.8484316, 'hadir'),
+(13, '5d2d52a0b82d4', 'Salsa', 'https://trackingforadmin.000webhostapp.com/images_user/12.jpg', 'Jumat', '2 Aug 2019', '15:50:37', -6.2720372, 106.8486547, 'hadir');
 
 -- --------------------------------------------------------
 
@@ -232,9 +193,10 @@ CREATE TABLE `userpulang` (
 --
 
 INSERT INTO `userpulang` (`id`, `user_id`, `keterangan`, `hari`, `tanggal`, `jam`) VALUES
-(1, '5d2fdbb236490', 'cba', 'selasa', '23 Jul 2019', '09:35'),
-(2, '5d2fdbb236490', '', 'Selasa', '23 Jul 2019', '11:51:46'),
-(3, '5d2fdbb236490', 'hhh', 'Selasa', '23 Jul 2019', '12:36:27');
+(4, '5d2fdbb236490', 'laporan hari ini', 'Jumat', '2 Aug 2019', '14:5:38'),
+(5, '5d2bda1b75bf0', 'Laporan hari ini', 'Jumat', '2 Aug 2019', '15:44:7'),
+(6, '5d2d4f317b560', 'Hari ini', 'Jumat', '2 Aug 2019', '15:46:56'),
+(7, '5d2d52a0b82d4', 'kegiatan hari ini', 'Jumat', '2 Aug 2019', '15:52:24');
 
 --
 -- Indexes for dumped tables
@@ -244,12 +206,6 @@ INSERT INTO `userpulang` (`id`, `user_id`, `keterangan`, `hari`, `tanggal`, `jam
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `kegiatanusers`
---
-ALTER TABLE `kegiatanusers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -281,28 +237,22 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kegiatanusers`
---
-ALTER TABLE `kegiatanusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
---
 -- AUTO_INCREMENT for table `presensiabsen`
 --
 ALTER TABLE `presensiabsen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `presensihadir`
 --
 ALTER TABLE `presensihadir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `userpulang`
 --
 ALTER TABLE `userpulang`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

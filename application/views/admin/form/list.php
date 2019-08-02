@@ -32,7 +32,7 @@
 										<th>Nama</th>
 										<th>Rekanan</th>
 										<th>Nomor Telepon</th>
-										<th>Keterangan</th>
+										
 										<th>Photo</th>
 										<th></th>
 									</tr>
@@ -49,9 +49,7 @@
 										<td>
 											<?php echo $user->noTelp ?>
 										</td>
-										<td>
-											
-										</td>
+									
 										<td>
 											<img src="<?php echo base_url('upload/form/'.$user->image) ?>" width="64" />
 										</td>
